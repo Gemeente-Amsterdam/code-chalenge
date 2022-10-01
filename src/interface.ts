@@ -3,6 +3,7 @@ export interface District {
     id: number, 
     district: string,
     neighbourhoods: [],
+    Tag?: [],
 }
 
 // Wijk
