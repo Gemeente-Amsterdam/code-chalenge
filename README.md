@@ -49,3 +49,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Mock API
 V
 To access the Moch API go to https://my-json-server.typicode.com/Gemeente-Amsterdam/code-chalenge
+
+
+## Opdracht
+Voor deze opdracht willen we een formulier zien waarmee ‘tags’ aan een lijst van stadsdelen gehangen kunnen worden. Deze tags moeten ook verwijderd kunnen worden. Belangrijke punten zijn gebruiksvriendelijkheid en een zo generiek mogelijke opzet zodat de functionaliteit in de toekomst uitgebreid kan worden. Je bent vrij om zelf te bedenken hoe je de React code wilt compilen en renderen.
+
+### Criteria:
+•	Laatste versie React
+•	State en lifecycles met behulp van Hooks
+•	Gebruik van Styled Components
+•	Gebruik het design system van de gemeente: (https://amsterdam.nl/designsystem/home/ ). Probeer zoveel mogelijk gebruik te maken van de Amsterdam Styled Components (https://github.com/Amsterdam/amsterdam-styled-components )
+•	Bonus: Voeg een ‘wijken’ toe die onder ‘stadsdelen’ kunnen hangen. De 'tags' van stadsdelen zijn transitief. Als je een ‘tag’ toevoegt aan een ‘wijk’ wordt deze ook aan het ‘stadsdeel’ toegevoegd
+•	Bonus: Gebruik een mock API om de lijst dynamisch te verwerken
+•	Bonus: Voeg end-to-end en/of unit tests toe aan je code
