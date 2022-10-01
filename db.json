@@ -1,0 +1,7 @@
+{
+    "districts": [
+      { "id": 1, "district": "A", "neighbourhoods": ["somestring1"] },
+      { "id": 2, "district": "B", "neighbourhoods":  ["somestring1", "somestring2"]},
+      { "id": 3, "district": "C", "neighbourhoods": ["somestring1", "somestring2", "somestring3"] }
+    ]
+}
