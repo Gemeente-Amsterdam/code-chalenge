@@ -1,14 +1,19 @@
-import React from 'react';
 import './App.css';
-import { Button, GlobalStyle, Tag, ThemeProvider, TextField } from '@amsterdam/asc-ui'
+import { GlobalStyle, ThemeProvider, Header } from '@amsterdam/asc-ui'
 import Tags from './components/Tags/Tags';
+import TagForm from './components/TagForm/TagForm';
 
 function App() {
+  
   return (
     <div className="App">
       <ThemeProvider>
         <GlobalStyle />
+        
+        <Header tall title="Wijken en tags" fullWidth={false} homeLink={'#'} />
+        <TagForm />
         <Tags />
+        
       </ThemeProvider>
     </div>
   );
