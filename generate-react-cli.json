@@ -1,7 +1,6 @@
 {
   "usesTypeScript": true,
-  "usesCssModule": true,
-  "cssPreprocessor": "scss",
+  "usesCssModule": false,
   "testLibrary": "Enzyme",
   "component": {
     "default": {
