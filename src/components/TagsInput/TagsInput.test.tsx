@@ -1,12 +1,11 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import Tags from './Tags';
+import TagsInput from './TagsInput';
 
 describe('<Tags />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<Tags />);
+    component = shallow(<TagsInput />);
   });
 
   test('It should mount', () => {

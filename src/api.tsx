@@ -1,12 +1,4 @@
-import axios from "axios";
-import { Idistrict } from "./interface";
+export const baseURL = 'https://my-json-server.typicode.com/Gemeente-Amsterdam/code-chalenge/db';
 
-export const baseURL = 'https://my-json-server.typicode.com/Gemeente-Amsterdam/code-chalenge/db'
-
-export const getData = () => {
-	return axios.get(baseURL)
-    .then(res => {
-        console.log(res.data)
-        return res.data
-    })
-}
+// TODO: Change local API url to web API 'https://6338f754937ea77bfdc54a79.mockapi.io/fe/'
+//TODO:  Make external functions for Axios API
