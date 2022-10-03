@@ -2,18 +2,9 @@ import styled from 'styled-components'
 import { useState } from 'react';
 import { Button, Tag, TextField } from '@amsterdam/asc-ui'
 
-
-interface TagsInputProps {}
-
 const TagsInput = () => {
-
-  const [tagInput, setTagIpunt] = useState('')
-
-  const [tags, setTags] = useState([
-    "Test"
-  ])
-
-  const [message, setMessage] = useState('');
+  const [tagInput, setTagIpunt] = useState('');
+  const [tags, setTags] = useState<Array<String>>([]);
 
   const handleUserInput = (event: { target: { value: string; }; }) => {
     setTagIpunt(event.target.value);
@@ -23,46 +14,48 @@ const TagsInput = () => {
     setTagIpunt("");
   };
 
-  function handleEnter(event:any){
+  const handleSubmit = () => {
+    const value = tagInput
+  
+    if(!value.trim()) return
+      setTags([...tags, value])
     
-    // If user did not press enter key, return
-    // Get the value of the input
+    resetInputField();
+  };
+
+  const handleEnter= (event:any) => {
+    event.persist();
     const value = event.target.value
+
     // If the value is empty, return
     if(!value.trim()) return
+
     // Add the value to the tags array
     if(event.key === 'Enter') {
-      setTags([...tags, value])
-      // Clear the input
-      event.preventDefault(); //prevent page reload (?)
+      setTags([...tags,value])
+
+      //TODO: loop is one input behind, fixes needed
+
       resetInputField();
     }
-    
-}
+  }
 
-const handleSubmit = (event:any) => {
-  const value = tagInput
-
-  if(!value.trim()) return
-  setTags([...tags, value])
-  event.preventDefault(); //prevent page reload (?)
-  resetInputField();
-};
-
-function removeTag(index:number){
+const removeTag = (index:number) =>{
   setTags(tags.filter((el, i) => i !== index))
 }
   
   return (
     <TagsInputContainer>
         <label htmlFor="">Tags toevoegen:</label>
-        { tags.map((tag, index) => (
-          <TagContainer>
-          <Tag key={index}>{tag}
-          <CloseButton className="close" onClick={() => removeTag(index)}>&times;</CloseButton>
-          </Tag>
+        {tags && 
+        tags.length > 0 && 
+        tags.map((tag, index) => (
+          <TagContainer key={index}>
+            <Tag>{tag}
+            <CloseButton className="close" onClick={() => removeTag(index)}>&times;</CloseButton>
+            </Tag>
           </TagContainer>
-            )) }
+        ))}
             <RowWrap>
               <TextField 
                 placeholder="Typ de gewenste tag" 

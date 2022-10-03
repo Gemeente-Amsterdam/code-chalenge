@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <ThemeProvider>
         <GlobalStyle />
-        
         <Header tall title="Wijken en tags" fullWidth={false} homeLink={'#'} />
         <TagForm />
         <TagsInput />

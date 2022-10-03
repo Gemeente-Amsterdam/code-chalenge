@@ -39,17 +39,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-## Mock API
-V
-To access the Moch API go to https://my-json-server.typicode.com/Gemeente-Amsterdam/code-chalenge
-
 
 ## Opdracht
 Voor deze opdracht willen we een formulier zien waarmee ‘tags’ aan een lijst van stadsdelen gehangen kunnen worden. Deze tags moeten ook verwijderd kunnen worden. Belangrijke punten zijn gebruiksvriendelijkheid en een zo generiek mogelijke opzet zodat de functionaliteit in de toekomst uitgebreid kan worden. Je bent vrij om zelf te bedenken hoe je de React code wilt compilen en renderen.
@@ -62,3 +51,6 @@ Voor deze opdracht willen we een formulier zien waarmee ‘tags’ aan een lijst
 •	Bonus: Voeg een ‘wijken’ toe die onder ‘stadsdelen’ kunnen hangen. De 'tags' van stadsdelen zijn transitief. Als je een ‘tag’ toevoegt aan een ‘wijk’ wordt deze ook aan het ‘stadsdeel’ toegevoegd
 •	Bonus: Gebruik een mock API om de lijst dynamisch te verwerken
 •	Bonus: Voeg end-to-end en/of unit tests toe aan je code
+
+## Mock API
+To access the Moch API go to https://my-json-server.typicode.com/Gemeente-Amsterdam/code-chalenge

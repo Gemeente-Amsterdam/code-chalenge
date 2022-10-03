@@ -8,6 +8,10 @@ interface CityDistrictsProps {
 const CityDistricts: FC<CityDistrictsProps> = () => (
   <div className={styles.CityDistricts}>
     CityDistricts Component
+    {/* 
+    TODO: show the CityDistricts Component details 
+    From api call
+    */}
   </div>
 );
 

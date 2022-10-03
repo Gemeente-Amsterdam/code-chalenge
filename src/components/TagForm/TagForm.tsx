@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { baseURL } from "../../api";
 import axios from "axios";
+import { Idistrict } from "../../interface";
 
 class TagForm extends Component{
   state = {
@@ -8,56 +9,55 @@ class TagForm extends Component{
       {id: 0, district: "Selecteer een Stadsdeel"}
     ]
   };
-
   
   componentDidMount () {
-      const doGetRequest = async () => {
+      const getALLData = async () => {
+        //API connection
         const res = await axios.get(baseURL);
         const data = res.data.districts;
         const result:any = [];
       
-        console.log(JSON.stringify(data));
-      
-        data.forEach((value:any) => {
+        // map data from api
+        data.forEach((value:Idistrict) => {
           result.push({
             id: value.id,
             district: value.district,
           });
         });
       
+        //Set data from api to state
         this.setState({
           districts:[this.state.districts[0],
           ...result
         ]
         })
 
-        console.log("TF.50: " + JSON.stringify(this.state.districts));
-        
         return result
     }
-      doGetRequest()
+
+    getALLData()
   }
 
+  render(){
+    const { districts } = this.state;
+  
+    const selectOptions = districts.map((option: Idistrict) =>
+      <option key={option.id} value={option.id}>{option.district}
+      </option>
+    );
 
-    render(){
-      const { districts } = this.state;
-
-        return (
-          <div>
-            <h2>Hang hier de gewenste tag aan de geweeste stadsdeel</h2>
-            <form action="#">
-              <select>
-              {districts.map((option) => {
-                return (
-                  <option key={option.id} value={option.id}>{option.district}
-                  </option>
-                );
-              })}
-              </select>
-            </form>
-         </div>
-        )
-    }
+      return (
+        <div>
+          <h2>Hang hier de gewenste tag aan de geweeste stadsdeel</h2>
+      
+          <form action="">
+            <select name="districts-list" id="districts-list">
+              {selectOptions}
+            </select>
+          </form>
+        </div>
+      )
+  }
 }
  
 
